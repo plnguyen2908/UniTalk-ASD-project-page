@@ -118,9 +118,9 @@
 
 <html>
 <head>
-	<title>This is my paper title</title>
+	<title>LASER_ASD</title>
 	<meta property="og:image" content="Path to my teaser.png"/> <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
-	<meta property="og:title" content="Creative and Descriptive Paper Title." />
+	<meta property="og:title" content="LASER: Lip Landmark Assisted Speaker Detection for Robustness" />
 	<meta property="og:description" content="Paper description." />
 
 	<!-- Get from Google Analytics -->
@@ -133,32 +133,37 @@
 
 		gtag('config', 'UA-75863369-6');
 	</script>
+	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 	<br>
 	<center>
-		<span style="font-size:36px">Creative and Descriptive Paper Title</span>
+		<span style="font-size:36px">LASER <br/> <span class = "blue">L</span>ip Landmark <span class = "blue">A</span>ssisted <span class = "blue">S</span>
+			peaker D<span class = "blue">E</span>tection for <span class = "blue">R</span>obustness</span>
 		<table align=center width=600px>
 			<table align=center width=600px>
 				<tr>
-					<td align=center width=100px>
+					<td align=center width=200px>
 						<center>
-							<span style="font-size:24px"><a href="https://en.wikipedia.org/wiki/James_J._Gibson">First Author</a></span>
+							<span style="font-size:24px"><a href="https://plnguyen2908.github.io/">Le Thien Phuc Nguyen *</a></span>
 						</center>
 					</td>
 					<td align=center width=100px>
 						<center>
-							<span style="font-size:24px"><a href="https://en.wikipedia.org/wiki/James_J._Gibson">Second Author</a></span>
+							<span style="font-size:24px"><a href="https://www.zhuoranyu.com/">Zhuoran Yu *</a></span>
 						</center>
 					</td>
 					<td align=center width=100px>
 						<center>
-							<span style="font-size:24px"><a href="https://en.wikipedia.org/wiki/James_J._Gibson">Third Author</a></span>
+							<span style="font-size:24px"><a href="https://pages.cs.wisc.edu/~yongjaelee/">Yong Jae Lee</a></span>
 						</center>
 					</td>
 				</tr>
+				<!-- <tr><td align=center> </span></td></tr> -->
 			</table>
+			<div>(<strong>*</strong> <i>Equal Contribution</i>)</div>
+			<center><span style="font-size:24px">University of Wisconsin - Madison</center>
 			<table align=center width=250px>
 				<tr>
 					<td align=center width=120px>
@@ -168,7 +173,7 @@
 					</td>
 					<td align=center width=120px>
 						<center>
-							<span style="font-size:24px"><a href='https://github.com/richzhang/webpage-template'>[GitHub]</a></span><br>
+							<span style="font-size:24px"><a href='https://github.com/plnguyen2908/LASER_ASD'>[GitHub]</a></span><br>
 						</center>
 					</td>
 				</tr>
@@ -181,7 +186,7 @@
 			<tr>
 				<td width=260px>
 					<center>
-						<img class="round" style="width:500px" src="./resources/teaser.png"/>
+						<img class="round" style="width:900px" src="./resources/teaser.png"/>
 					</center>
 				</td>
 			</tr>
@@ -189,7 +194,9 @@
 		<table align=center width=850px>
 			<tr>
 				<td>
-					This was a template originally made for <a href="http://richzhang.github.io/colorization/">Colorful Image Colorization</a>. The code can be found in this <a href="https://github.com/richzhang/webpage-template">repository</a>.
+					<strong>Qualitative results of LASER, TalkNCE, LoCoNet on two unsynchronized videos</strong>. We create non-speaking scenarios by
+swapping the audio tracks of two videos where the same person is speaking with similar camera angles. The <span class="red">red</span> box means the model
+predicts not-speaking. The <span class="green">green</span> box means the model predicts speaking. The <span class="orange">yellow</span> circle means the model makes a wrong prediction.
 				</td>
 			</tr>
 		</table>
@@ -201,30 +208,24 @@
 		<center><h1>Abstract</h1></center>
 		<tr>
 			<td>
-				This is my abstract.
+				Active Speaker Detection (ASD) aims to identify speaking individuals in complex visual scenes. 
+				While humans can easily detect speech by matching lip movements to audio, <strong class = "red">current ASD models 
+				struggle to establish this correspondence</strong>, often misclassifying non-speaking instances when audio 
+				and lip movements are unsynchronized. To address this limitation, we propose <strong class="blue">Lip landmark Assisted Speaker 
+				dEtection for Robustness (LASER)</strong>. Unlike models that rely solely on facial frames, LASER explicitly focuses
+				 on lip movements by <strong class="blue">integrating lip landmarks in training</strong>. Specifically, given a face track, LASER extracts 
+				 frame-level visual features and the 2D coordinates of lip landmarks using a lightweight detector. 
+				 These coordinates are encoded into dense feature maps, providing spatial and structural information 
+				 on lip positions. Recognizing that landmark detectors may sometimes fail under challenging conditions 
+				 (e.g., low resolution, occlusions, extreme angles), we incorporate an <strong class="blue">auxiliary consistency loss</strong>  to align 
+				 predictions from both lip-aware and face-only features, <strong class="green">ensuring reliable performance even when lip data 
+				 is absent</strong>. Extensive experiments across multiple datasets show that LASER outperforms state-of-the-art models, 
+				 especially in scenarios with desynchronized audio and visuals, <strong class = "green">demonstrating robust performance in real-world video contexts</strong>.
 			</td>
 		</tr>
 	</table>
 	<br>
-
-	<hr>
-	<center><h1>Talk</h1></center>
-	<p align="center">
-		<iframe width="660" height="395" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen align="center"></iframe>
-	</p>
-
-	<table align=center width=800px>
-		<br>
-		<tr>
-			<center>
-				<span style="font-size:28px"><a href=''>[Slides]</a>
-				</span>
-			</center>
-		</tr>
-	</table>
-	<hr>
-
-	<center><h1>Code</h1></center>
+	<center><h1>Our Method</h1></center>
 
 	<table align=center width=420px>
 		<center>
@@ -238,7 +239,7 @@
 		<tr>
 			<td align=center width=400px>
 				<center>
-					<td><img class="round" style="width:450px" src="./resources/method_diagram.png"/></td>
+					<td><img class="round" style="width:800px" src="./resources/method_diagram.png"/></td>
 				</center>
 			</td>
 		</tr>
@@ -252,14 +253,31 @@
 			</tr>
 		</center>
 	</table>
-	<table align=center width=800px>
+	<hr>
+	<center><h1>Demo</h1></center>
+	<p align="center">
+		<iframe width="660" height="395" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen align="center"></iframe>
+	</p>
+
+	<!-- <table align=center width=800px>
+		<br>
+		<tr>
+			<center>
+				<span style="font-size:28px"><a href=''>[Slides]</a>
+				</span>
+			</center>
+		</tr>
+	</table>
+	<hr> -->
+
+	<!-- <table align=center width=800px>
 		<br>
 		<tr><center>
 			<span style="font-size:28px">&nbsp;<a href='https://github.com/richzhang/webpage-template'>[GitHub]</a>
 			</center>
 		</span>
 	</table>
-	<br>
+	<br> -->
 	<hr>
 	<table align=center width=450px>
 		<center><h1>Paper and Supplementary Material</h1></center>
