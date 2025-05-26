@@ -118,7 +118,7 @@
 
 <html>
 <head>
-	<title>LASER_ASD</title>
+	<title>UniTalk-ASD</title>
 	<meta property="og:image" content="Path to my teaser.png"/> <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
 	<meta property="og:title" content="LASER: Lip Landmark Assisted Speaker Detection for Robustness" />
 	<meta property="og:description" content="Paper description." />
@@ -139,31 +139,78 @@
 <body>
 	<br>
 	<center>
-		<span style="font-size:36px"><strong class="blue">LASER</strong> <br/> <span class = "blue">L</span>ip Landmark <span class = "blue">A</span>ssisted <span class = "blue">S</span>peaker 
-		d<span class = "blue">E</span>tection for <span class = "blue">R</span>obustness</span>
+		<span style="font-size:36px"><strong style="font-weight:bold;">UniTalk</strong>: Towards Universal Active Speaker Detection in Real World Scenarios</span>
 		<table align=center width=600px>
-			<table align=center width=600px>
+			<table align=center width=1000px>
 				<tr>
 					<td align=center width=200px>
 						<center>
-							<span style="font-size:24px"><a href="https://plnguyen2908.github.io/">Le Thien Phuc Nguyen *</a></span>
+							<span style="font-size:24px"><a href="https://plnguyen2908.github.io/">Le Thien Phuc Nguyen * <sup>1</sup></a></span>
 						</center>
 					</td>
 					<td align=center width=100px>
 						<center>
-							<span style="font-size:24px"><a href="https://www.zhuoranyu.com/">Zhuoran Yu *</a></span>
+							<span style="font-size:24px"><a href="https://www.zhuoranyu.com/">Zhuoran Yu * <sup>1</sup></a></span>
+						</center>
+					</td>
+					<td align=center width=200px>
+						<center>
+							<span style="font-size:24px">Khoa Quang Nhat Cao <sup>1</sup></span>
 						</center>
 					</td>
 					<td align=center width=100px>
 						<center>
-							<span style="font-size:24px"><a href="https://pages.cs.wisc.edu/~yongjaelee/">Yong Jae Lee</a></span>
+							<span style="font-size:24px">Yuwei Guo <sup>1</sup></span>
+						</center>
+					</td>
+					
+				</tr>
+				
+				<!-- <tr><td align=center> </span></td></tr> -->
+			</table>
+			<table align="center" width=1000px>
+				<tr>
+					<td align=center width=100px>
+						<center>
+							<span style="font-size:24px">Tu Ho Manh Pham <sup>1</sup></span>
+						</center>
+					</td>
+					<td align=center width=100px>
+						<center>
+							<span style="font-size:24px">Tuan Tai Nguyen <sup>1</sup></span>
+						</center>
+					</td>
+					<td align=center width=100px>
+						<center>
+							<span style="font-size:24px">Toan Ngo Duc Vo <sup>1</sup></span>
+						</center>
+					</td>
+					<td align=center width=100px>
+						<center>
+							<span style="font-size:24px">Lucas Poon <sup>1</sup></span>
 						</center>
 					</td>
 				</tr>
-				<!-- <tr><td align=center> </span></td></tr> -->
+			</table>
+			<table align="center" width = 600px>
+				<td align=center width=100px>
+						<center>
+							<span style="font-size:24px"><a href="https://sites.google.com/view/soochahnlee/">Soochan Lee <sup>2</sup></a></span>
+						</center>
+					</td>
+					<td align=center width=100px>
+						<center>
+							<span style="font-size:24px"><a href="https://pages.cs.wisc.edu/~yongjaelee/">Yong Jae Lee <sup>1</sup></a></span>
+						</center>
+					</td>
 			</table>
 			<div>(<strong>*</strong> <i>Equal Contribution</i>)</div>
-			<center><span style="font-size:24px">University of Wisconsin - Madison</center>
+			<table align="center" width="700px">
+				<tr>
+					<td align="center" width = 400px><span style="font-size:24px"><sup>1</sup>University of Wisconsin - Madison </span></td>
+					<td align="center" width = 200px><span style="font-size:24px"><sup>2</sup>Kookmin University</span></td>
+				</tr>
+			</table>
 			<table align=center width=250px>
 				<tr>
 					<td align=center width=120px>
@@ -173,14 +220,19 @@
 					</td>
 					<td align=center width=120px>
 						<center>
-							<span style="font-size:24px"><a href='https://github.com/plnguyen2908/LASER_ASD'>[GitHub]</a></span><br>
+							<span style="font-size:24px"><a href='https://github.com/plnguyen2908/UniTalk-ASD-code'>[Code]</a></span><br>
+						</center>
+					</td>
+					<td align=center width=120px>
+						<center>
+							<span style="font-size:24px"><a href='https://huggingface.co/datasets/plnguyen2908/UniTalk-ASD'>[Data]</a></span><br>
 						</center>
 					</td>
 				</tr>
 			</table>
 		</table>
 	</center>
-
+<!-- 
 	<center>
 		<table align=center width=850px>
 			<tr>
@@ -200,92 +252,262 @@ predicts not-speaking. The <span class="green">green</span> box means the model 
 				</td>
 			</tr>
 		</table>
-	</center>
+	</center> -->
+	<hr>
 
+	<table align=center width=850px>
+		<center><h1>TL;DR</h1></center>
+		<tr>
+			<td>
+				We introduce UniTalk, a challenging active speaker detection dataset 
+				designed to enhance model generalization in diverse real-world scenarios.
+			</td>
+		</tr>
+	</table>
 	<hr>
 
 	<table align=center width=850px>
 		<center><h1>Abstract</h1></center>
 		<tr>
 			<td>
-				Active Speaker Detection (ASD) aims to identify speaking individuals in complex visual scenes. 
-				While humans can easily detect speech by matching lip movements to audio, <strong class = "red">current ASD models 
-				struggle to establish this correspondence</strong>, often misclassifying non-speaking instances when audio 
-				and lip movements are unsynchronized. To address this limitation, we propose <strong class="blue">Lip landmark Assisted Speaker 
-				dEtection for Robustness (LASER)</strong>. Unlike models that rely solely on facial frames, LASER explicitly focuses
-				 on lip movements by <strong class="blue">integrating lip landmarks in training</strong>. Specifically, given a face track, LASER extracts 
-				 frame-level visual features and the 2D coordinates of lip landmarks using a lightweight detector. 
-				 These coordinates are encoded into dense feature maps, providing spatial and structural information 
-				 on lip positions. Recognizing that landmark detectors may sometimes fail under challenging conditions 
-				 (e.g., low resolution, occlusions, extreme angles), we incorporate an <strong class="blue">auxiliary consistency loss</strong>  to align 
-				 predictions from both lip-aware and face-only features, <strong class="green">ensuring reliable performance even when lip data 
-				 is absent</strong>. Extensive experiments across multiple datasets show that LASER outperforms state-of-the-art models, 
-				 especially in scenarios with desynchronized audio and visuals, <strong class = "green">demonstrating robust performance in real-world video contexts</strong>.
+				We present UniTalk, a novel dataset specifically designed for the task of 
+				active speaker detection, emphasizing challenging scenarios to enhance model generalization. 
+				Unlike previously established benchmarks such as AVA, which predominantly features old movies 
+				and thus exhibits significant domain gaps, UniTalk focuses explicitly on diverse and difficult 
+				real-world conditions. These include underrepresented languages, noisy backgrounds, and crowded 
+				scenes - such as multiple visible speakers speaking concurrently or in overlapping turns. It 
+				contains over 44.5 hours of video with frame-level active speaker annotations across 48,693 
+				speaking identities, and spans a broad range of video types that reflect real-world conditions. 
+				Through rigorous evaluation, we show that state-of-the-art models, while achieving nearly perfect 
+				scores on AVA, fail to reach saturation on UniTalk, suggesting that the ASD task remains far from 
+				solved under realistic conditions. Nevertheless, models trained on UniTalk demonstrate stronger 
+				generalization to modern “in-the-wild” datasets like Talkies and ASW, as well as to AVA. UniTalk 
+				thus establishes a new benchmark for active speaker detection, providing researchers with a 
+				valuable resource for developing and evaluating versatile and resilient models.	
 			</td>
 		</tr>
 	</table>
-	<br>
-	<center><h1>Our Method</h1></center>
+	<hr>
+	<!-- <br> -->
+	<center><h1>Comparison with other benchmarks</h1></center>
+	<table align="center" width="850px" style="border-collapse: collapse; text-align: center; font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif; font-weight:300;">
+    <caption style="font-size:20px; padding-bottom:10px;"><strong style="font-weight:bold;">Table 1: Quantitative comparison between ASD datasets.</strong><br>
+    All statistics are computed over the combined training and test sets of each dataset. The highest value in each row is shown in <b style="font-weight:bold;">bold</b>.</caption>
+    <thead>
+        <tr>
+            <th style="padding:10px; border-top: 2px solid black; border-bottom: 2px solid black;">Statistics</th>
+            <th style="padding:10px; border-top: 2px solid black; border-bottom: 2px solid black;">AVA</th>
+            <th style="padding:10px; border-top: 2px solid black; border-bottom: 2px solid black;">ASW</th>
+            <th style="padding:10px; border-top: 2px solid black; border-bottom: 2px solid black;">Talkies</th>
+            <th style="padding:10px; border-top: 2px solid black; border-bottom: 2px solid black;">UniTalk</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="padding:10px;">Total hours</td>
+            <td style="padding:10px;">38.5</td>
+            <td style="padding:10px;">23</td>
+            <td style="padding:10px;">4.2</td>
+            <td style="padding:10px;"><strong style="font-weight:bold;">44.5</strong></td>
+        </tr>
+        <tr>
+            <td style="padding:10px;">Total face tracks</td>
+            <td style="padding:10px;">37,738</td>
+            <td style="padding:10px;">8,000</td>
+            <td style="padding:10px;">23,508</td>
+            <td style="padding:10px;"><strong style="font-weight:bold;">48,693</strong></td>
+        </tr>
+        <tr>
+            <td style="padding:10px;">Total face crops</td>
+            <td style="padding:10px;">3.4M</td>
+            <td style="padding:10px;">407K</td>
+            <td style="padding:10px;">799K</td>
+            <td style="padding:10px;"><strong style="font-weight:bold;">4M</strong></td>
+        </tr>
+        <tr>
+            <td style="padding:10px; border-bottom: 2px solid black;">Average speakers per frame</td>
+            <td style="padding:10px; border-bottom: 2px solid black;">1.5</td>
+            <td style="padding:10px; border-bottom: 2px solid black;">1.9</td>
+            <td style="padding:10px; border-bottom: 2px solid black;">2.3</td>
+            <td style="padding:10px; border-bottom: 2px solid black;"><strong style="font-weight:bold;">2.6</strong></td>
+        </tr>
+    </tbody>
+</table>
 
-	<table align=center width=420px>
-		<center>
-			<tr>
-				<td>
-				</td>
-			</tr>
-		</center>
-	</table>
-	<table align=center width=400px>
-		<tr>
-			<td align=center width=400px>
-				<center>
-					<td><img class="round" style="width:800px" src="./resources/method_diagram.png"/></td>
-				</center>
-			</td>
-		</tr>
-	</table>
+	<hr>
+	<center>
+  <h1>Examples</h1>
+  <div id="demo-container" style="position: relative; width: 660px; margin: auto;">
+    <!-- Tiêu đề video -->
+    <h2 id="demo-title"
+        style="font-weight:300; font-size:24px; margin-bottom:10px;">
+
+    </h2>
+
+    <!-- Video HTML5 -->
+    <video id="demo-video" width="660" height="395" controls>
+      <source id="demo-source" src="videos/video1.mp4" type="video/mp4">
+      Your browser does not support mp4
+    </video>
+
+    <!-- Nút Prev/Next -->
+    <button id="demo-prev"
+            style="position:absolute; top:50%; left:-50px; transform:translateY(-50%); font-size:18px;">
+      ◀
+    </button>
+    <button id="demo-next"
+            style="position:absolute; top:50%; right:-50px; transform:translateY(-50%); font-size:18px;">
+      ▶
+    </button>
+  </div>
+</center>
+<hr>
+	<center><h1>Experimental Results</h1></center>
+	<!-- Leaderboard Section -->
+<style>
+  .leaderboard {
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: 'HelveticaNeue-Light', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+  }
+  .leaderboard caption {
+    caption-side: top;
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  .leaderboard th,
+  .leaderboard td {
+    padding: 12px 8px;
+    border-bottom: 1px solid #ddd;
+  }
+  .leaderboard th {
+    font-size: 18px;
+    color: #333;
+    border-bottom: 2px solid #999;
+  }
+  .leaderboard tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  .leaderboard tr:hover {
+    background-color: #f1f1f1;
+  }
+</style>
+
+<table class="leaderboard">
+  <caption>Leaderboard</caption>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Underrepresented Languages</th>
+      <th>Background Noise</th>
+      <th>Crowded Scenes</th>
+	  <th>Mixed Condition</th>
+      <th>Overall</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>LoCoNet + TalkNCE</td>
+      <td>86.7</td>
+      <td>84.9</td>
+      <td>84.1</td>
+      <td>77.9</td>
+	  <td>83.2</td>
+    </tr>
+    <tr>
+      <td>LoCoNet</td>
+      <td>85.8</td>
+      <td>84.6</td>
+      <td>80.0</td>
+      <td>76.2</td>
+	  <td>82.2</td>
+    </tr>
+    <tr>
+      <td>TalkNet</td>
+      <td>80.1</td>
+      <td>77.6</td>
+      <td>67.1</td>
+      <td>70.3</td>
+	  <td>75.7</td>
+    </tr>
+	 <tr>
+      <td>ASC</td>
+      <td>74.7</td>
+      <td>62.9</td>
+      <td>53.4</td>
+      <td>57.3</td>
+	  <td>61.4</td>
+    </tr>
+	 <tr>
+      <td>ASDNet</td>
+      <td>30.8</td>
+      <td>17.5</td>
+      <td>14.8</td>
+      <td>20.3</td>
+	  <td>20.6</td>
+    </tr>
+    <!-- add more rows as needed -->
+  </tbody>
+</table>
+
+ <center>For future models, please contact us so that we can verify your result and update our leaderboard.</center>
+<table class="leaderboard">
+  <caption>Dataset Comparison</caption>
+  <thead>
+    <tr>
+      <th>Train on \ Evaluation</th>
+      <th>AVA</th>
+      <th>Talkies</th>
+      <th>ASW</th>
+	  <th>UniTalk</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AVA</td>
+      <td>95.5</td>
+      <td>88.3</td>
+      <td>88.5</td>
+      <td>77.5</td>
+    </tr>
+    <tr>
+      <td>Talkies</td>
+      <td>55.7</td>
+      <td>95.6</td>
+      <td>84.5</td>
+      <td>59.9</td>
+    </tr>
+    <tr>
+      <td>ASW</td>
+      <td>29.2</td>
+      <td>58.8</td>
+      <td>96.1</td>
+      <td>33.8</td>
+    </tr>
+	 <tr>
+      <td>UniTalk</td>
+      <td>88.0</td>
+      <td>91.4</td>
+      <td>90.4</td>
+      <td>83.2</td>
+    </tr>
+    <!-- add more rows as needed -->
+  </tbody>
+</table>
+	<center>To compare between different datasets, we use the state-of-the-art model at the current time: LoCoNet + TalkNCE.
+	</center> 
+	<hr>
 	<table align=center width=850px>
-		<center>
-			<tr>
-				<td>
-					Short description if wanted
-				</td>
-			</tr>
-		</center>
-	</table>
-	<hr>
-	<center><h1>Demo</h1></center>
-	<p align="center">
-		<iframe width="660" height="395" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen align="center"></iframe>
-	</p>
-
-	<!-- <table align=center width=800px>
-		<br>
-		<tr>
-			<center>
-				<span style="font-size:28px"><a href=''>[Slides]</a>
-				</span>
-			</center>
-		</tr>
-	</table>
-	<hr> -->
-
-	<!-- <table align=center width=800px>
-		<br>
-		<tr><center>
-			<span style="font-size:28px">&nbsp;<a href='https://github.com/richzhang/webpage-template'>[GitHub]</a>
-			</center>
-		</span>
-	</table>
-	<br> -->
-	<hr>
-	<table align=center width=450px>
 		<center><h1>Paper and Supplementary Material</h1></center>
 		<tr>
 			<td><a href=""><img class="layered-paper-big" style="height:175px" src="./resources/paper.png"/></a></td>
-			<td><span style="font-size:14pt">F. Author, S. Author, T. Author.<br>
-				<b>Creative and Descriptive Paper Title.</b><br>
-				In Conference, 20XX.<br>
+			<td><span style="font-size:14pt">Le Thien Phuc Nguyen*, Zhuoran Yu*, Khoa Quang Nhat Cao, Yuwei Guo, Tu Ho Manh Pham,
+				Tuan Tai Nguyen, Toan Ngo Duc Vo, Lucas Poon, Soochahn Lee, Yong Jae Lee (* Equal Contribution) <br>
+				<b>UniTalk: Towards Universal Active Speaker Detection in Real World Scenarios</b><br>
 				(hosted on <a href="">ArXiv</a>)<br>
 				<!-- (<a href="./resources/camera-ready.pdf">camera ready</a>)<br> -->
 				<span style="font-size:4pt"><a href=""><br></a>
@@ -316,6 +538,47 @@ predicts not-speaking. The <span class="green">green</span> box means the model 
 			</td>
 		</tr>
 	</table>
+
+	<script type="text/javascript">
+		google.load("jquery","1.3.2");
+		google.setOnLoadCallback(function(){
+  $(function(){
+    // 1. Định nghĩa mảng 4 video (title + đường dẫn file)
+    var videos = [
+      { title: "Mixed Conditions",         src: "resources/qv3-HaaxGUc_viz.mp4" },
+      { title: "Underrepresented Languages (Vietnamese)", src: "resources/h7yBkFhjVtE_viz.mp4" },
+      { title: "High Background Noise",    src: "resources/m_OrwMmAXts_viz.mp4" },
+      { title: "Crowded Scenes",           src: "resources/1hJn0KZ1cs8_viz.mp4" },
+    ];
+
+    var idx = 0;
+
+    // 2. Hàm hiển thị video & tiêu đề tại chỉ số i
+    function showVideo(i) {
+      var v = videos[i];
+      $("#demo-title").text(v.title);
+      $("#demo-source").attr("src", v.src);
+      // bắt buộc load lại video khi đổi source
+      $("#demo-video")[0].load();
+    }
+
+    // 3. Hiển thị video đầu tiên
+    showVideo(idx);
+
+    // 4. Xử lý click nút Next
+    $("#demo-next").click(function(){
+      idx = (idx + 1) % videos.length;
+      showVideo(idx);
+    });
+
+    // 5. Xử lý click nút Prev
+    $("#demo-prev").click(function(){
+      idx = (idx - 1 + videos.length) % videos.length;
+      showVideo(idx);
+    });
+  });
+  });
+</script>
 
 <br>
 </body>
